@@ -1,0 +1,24 @@
+<table class="table table-striped col-md-10 mx-auto mt-5" style="width:50%" id="movies">
+  <thead>
+    <tr>
+      <th>Tag Name</th>
+      <th>Total number of Books</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td>
+          <%= tag.name %>
+        </td>
+        <td>
+          <%= tag.books.count %>
+        </td>
+        <td>
+          <%= link_to 'Assign Tag to Book', edit_tag_path(tag), :class => 'btn btn-primary ml-5' %>   
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,31 @@
+<%= form_with url: tag_path(@tag), method: :patch do |form| %>
+  <table class="table table-striped col-md-10 mx-auto mt-5" id="movies">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Select Book</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td>
+            <%= book.title %>
+          </td>
+          <td>
+            <%= book.description %>
+          </td>
+          <td>
+            <%= book.price %>
+          </td>
+          <td>
+            <%= check_box_tag "book_ids[]", book.id, get_checked(book) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= form.submit :submit, class: 'btn btn-primary ml-5' %>
+<% end %>

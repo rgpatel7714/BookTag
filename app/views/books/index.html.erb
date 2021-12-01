@@ -1,0 +1,29 @@
+<%= render 'filter_by' %>
+<table class="table table-striped col-md-10 mx-auto mt-5" id="movies">
+  <thead>
+    <tr>
+      <th>Book Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td>
+          <%= book.title %>
+        </td>
+        <td>
+          <%= book.description %>
+        </td>
+        <td>
+          <%= book.price %>
+        </td>
+        <td>
+          <%= get_tags(book) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

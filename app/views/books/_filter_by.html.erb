@@ -1,0 +1,20 @@
+<%= form_with url: filter_books_path, method: :post do |form| %>
+<div class="row mt-5">
+  <div class="col-2">
+  </div>
+  <div class="col-2">
+    Filter books by : 
+  </div>
+  <div class="col-2">
+    Price : 
+    <%= select_tag "filter_price", options_for_select([['0-50','0-50'],['50-100','50-100'],['100-150','100-150'],['150-200','150-200'],['more than 200','201-100000']],selected:@selected_price), { class: 'form-control', prompt: "Select Price"}%>
+  </div>
+  <div class="col-2">
+    Tags : 
+    <%= select_tag "filter_tag", options_for_select(Tag.all.pluck(:name),selected:@selected_tags), { class: 'form-control',multiple: true}%>
+  </div>
+  <div class="col-2">
+    <%= form.submit 'Filter Books', class: 'btn btn-primary ml-5' %>
+  </div>
+</div>
+<% end %>

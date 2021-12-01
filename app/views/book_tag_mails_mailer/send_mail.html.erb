@@ -1,0 +1,7 @@
+<% @max_tag_books.each do |max_tag_book| %>
+  Name : <%= max_tag_book[0].title%><br>
+  Price : <%= max_tag_book[0].price%><br>
+  Description : <%= max_tag_book[0].description%><br>
+  No Of Tags : <%= max_tag_book[1]%><br>
+  ==================================<br><br><br>
+<% end %>

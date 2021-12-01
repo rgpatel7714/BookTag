@@ -1,0 +1,9 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+
+development:
+  <<: *default
+  database: book_tag_database
+  username: root
+  password: password
